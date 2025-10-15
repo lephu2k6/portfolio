@@ -16,7 +16,7 @@ const Header = () => {
   }, [isInView, controls]);
 
   return (
-    <div className="bg-gradient-to-br from-background to-gray-50 mb-30">
+    <div id = "home" className="bg-gradient-to-br from-background to-gray-50 mb-30">
       <Navbar />
 
       <motion.div 
@@ -72,7 +72,7 @@ const Header = () => {
             <img
               src={img}
               alt="Hero"
-              className="rounded-2xl shadow-2xl w-full max-w-md object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              className=" shadow-2xl w-full max-w-2xl h-96 md:h-[350px] object-contain rounded-2xl hover:grayscale-0 transition-all duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-2xl" />
             <div className="absolute -bottom-2 -right-2 w-full h-full rounded-2xl border-2 border-gray-200 -z-10" />

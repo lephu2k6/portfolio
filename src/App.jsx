@@ -8,6 +8,10 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import About from './components/About';
 import Experiment from './components/Experiment';
+import MyProject from './components/Project';
+import MySkill from './components/Skill';
+import MyContact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -17,6 +21,10 @@ function App() {
       <Header />
       <About />
       <Experiment />
+      <MyProject />
+      <MySkill />
+      <MyContact />
+      <Footer />
     </>
   )
 }
