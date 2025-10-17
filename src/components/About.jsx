@@ -20,14 +20,14 @@ const About = () => {
         variants={imageAnim}
         className="w-full md:w-1/2 flex justify-center"
       >
-        <div id="about" className="relative group">
+        <div id="about" className="relative group w-full max-w-md">
           <img 
             src={img} 
             alt="About me" 
-            className="rounded-xl shadow-2xl max-w-sm w-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+            className="rounded-xl shadow-2xl w-full h-[480px] object-cover transition-all duration-500 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-xl" />
-          <div className="absolute -bottom-3 -right-3 w-full h-full rounded-xl border-2 border-gray-200 -z-10 group-hover:-bottom-2 group-hover:-right-2 transition-all duration-300" />
+          <div className="absolute -bottom-3 -right-3 w-full h-full rounded-xl border-2 border-gray-200 -z-10 group-hover:-bottom-2 group-hover:-right-2 group-hover:border-black transition-all duration-300" />
         </div>
       </motion.div>
 
@@ -58,7 +58,7 @@ const About = () => {
   { icon: <FaEnvelope className="text-xl text-gray-700" />, title: "Email", content: "Lhmp8686@gmail.com" },
   { icon: <FaUniversity className="text-xl text-gray-700" />, title: "Studying At", content: "University of Transport, Ho Chi Minh City" },
   { icon: <FaPhone className="text-xl text-gray-700" />, title: "Phone", content: "0981 46 0071" },
-  { icon: <FaBriefcase className="text-xl text-gray-700" />, title: "Profession", content: "Software Engineer" }
+  { icon: <FaBriefcase className="text-xl text-gray-700" />, title: "Profession", content: "Student" }
 ].map((card, index) => (
   <motion.div 
     key={index}
@@ -75,7 +75,7 @@ const About = () => {
 ))}
         </motion.div>
 
-        {/* Buttons */}
+        {/* Button nhó */}
         <motion.div variants={itemSlide} className="flex gap-4 mt-8">
           <motion.button
             variants={buttonAnim}

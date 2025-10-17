@@ -1,6 +1,7 @@
 import { useState } from "react"
 import React from "react"
 import RevealOnScroll from "../animations/RevealOnScroll"
+import { FaGraduationCap } from "react-icons/fa"
 
 const Experiment = () => {
     const [activeTab, setActiveTab] = useState('work')
@@ -8,41 +9,26 @@ const Experiment = () => {
         work: [
             {
                 id: 1,
-                title: "Hệ thống E-commerce",
-                description: "Xây dựng platform thương mại điện tử với tính năng thanh toán đa phương thức và quản lý kho hàng thông minh",
-                technologies: ["React", "Node.js", "MongoDB", "Stripe API", "Redis"]
+                title: "Freelance Developer",
+                description: "Build and develop website functions, Implement website deployment in real environment",
+                technologies: ["Php" , "MySql"]
             },
             {
                 id: 2,
-                title: "Ứng dụng Quản lý Task",
-                description: "Ứng dụng quản lý công việc với real-time collaboration, deadline tracking và báo cáo hiệu suất",
-                technologies: ["Vue.js", "Firebase", "Tailwind CSS", "Chart.js"]
-            },
-            {
-                id: 3,
-                title: "AI Content Generator",
-                description: "Công cụ tạo content tự động sử dụng GPT API với tính năng tối ưu hóa SEO và phân tích hiệu suất",
-                technologies: ["Next.js", "Python", "OpenAI API", "PostgreSQL"]
+                title: "Backend Developer",
+                description: "Take on the role of coordinating with the Frontend team in building and developing the system, including database design and implementing the e-commerce platform in the logistics field.",
+                technologies: ["Nodejs" , "Expressjs" , "Mongodb" , "Socketio"]
             }
+            
         ],
         education: [
             {
                 id: 1,
-                title: "Hệ thống Quản lý Thư viện",
-                description: "Dự án học thuật xây dựng hệ thống quản lý thư viện số với module mượn/trả sách và thống kê",
-                technologies: ["Java", "Spring Boot", "MySQL", "Thymeleaf"]
-            },
-            {
-                id: 2,
-                title: "Game Tower Defense",
-                description: "Game chiến thuật phòng thủ với AI enemy và hệ thống upgrade tower đa dạng",
-                technologies: ["C#", "Unity", "Blender"]
-            },
-            {
-                id: 3,
-                title: "Mobile Weather App",
-                description: "Ứng dụng thời tiết di động với dự báo theo giờ, cảnh báo thời tiết và widget home screen",
-                technologies: ["React Native", "OpenWeather API", "Redux"]
+                school: "Ho Chi Minh City University of Transport",
+                major: "Information technology",
+                description: "The Bachelor of Information Technology program focuses on software development, artificial intelligence and cybersecurity.",
+                period: "2024-2028",
+                location: "Ho Chi Minh City, Vietnam"
             }
         ]
     }
@@ -58,7 +44,7 @@ const Experiment = () => {
                             My Experience
                         </h1>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                            Khám phá các dự án và kinh nghiệm thực tế mà tôi đã tích lũy
+                        Explore the practical experiences I have accumulated
                         </p>
                     </div>
                     
@@ -83,44 +69,76 @@ const Experiment = () => {
                                     : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
                                 }`}
                             >
-                                Education Projects
+                                Education
                             </button>
                         </div>
 
                         {/* Content */}
                         <div className="min-h-96">
-                            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                            <div className={activeTab === 'work' ? "grid gap-6 md:grid-cols-2 lg:grid-cols-3" : "w-full flex flex-col gap-6"}>
                                 {currentData.map((item) => (
                                     <div 
                                         key={item.id}
                                         className="bg-gray-50 rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-gray-300"
                                     >
-                                        {/* Title */}
-                                        <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                            {item.title}
-                                        </h3>
-                                        
-                                        {/* Description */}
-                                        <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                                            {item.description}
-                                        </p>
-                                        
-                                        {/* Technologies */}
-                                        <div className="mt-4">
-                                            <h4 className="text-sm font-semibold text-gray-700 mb-2">
-                                                Công nghệ sử dụng:
-                                            </h4>
-                                            <div className="flex flex-wrap gap-2">
-                                                {item.technologies.map((tech, index) => (
-                                                    <span 
-                                                        key={index}
-                                                        className="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded-full font-medium"
-                                                    >
-                                                        {tech}
-                                                    </span>
-                                                ))}
+                                        {activeTab === 'work' ? (
+                                            <>
+                                                {/* Title */}
+                                                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                                                    {item.title}
+                                                </h3>
+                                                
+                                                {/* Description */}
+                                                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                                                    {item.description}
+                                                </p>
+                                                
+                                                {/* Technologies */}
+                                                <div className="mt-4">
+                                                    <h4 className="text-sm font-semibold text-gray-700 mb-2">
+                                                        Công nghệ sử dụng:
+                                                    </h4>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {item.technologies.map((tech, index) => (
+                                                            <span 
+                                                                key={index}
+                                                                className="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded-full font-medium"
+                                                            >
+                                                                {tech}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <div className="relative flex items-start space-x-6 pl-10">
+                                                <div className="absolute left-0 top-1 flex flex-col items-center">
+                                                    <div className="text-3xl text-black">
+                                                        <FaGraduationCap />
+                                                    </div>
+                                                    <div className="mt-2 w-0.5 h-full bg-gray-300"></div>
+                                                </div>
+                                                <div className="flex-grow">
+                                                    <div className="flex flex-col sm:flex-row justify-between items-start">
+                                                        <div>
+                                                            <h3 className="text-xl font-bold text-gray-900">
+                                                                {item.major}
+                                                            </h3>
+                                                            <p className="text-gray-700 font-semibold mt-1">
+                                                                {item.school}
+                                                            </p>
+                                                        </div>
+                                                        <div className="text-sm text-gray-500 mt-2 sm:mt-0 sm:text-right">
+                                                            <p>{item.period}</p>
+                                                            <p>{item.location}</p>
+                                                        </div>
+                                                    </div>
+                                                    <p className="text-gray-600 mt-3 text-sm leading-relaxed">
+                                                        {item.description}
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
+                                        )}
                                     </div>
                                 ))}
                             </div>

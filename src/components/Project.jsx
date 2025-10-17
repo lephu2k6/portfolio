@@ -4,6 +4,10 @@ import { motion, useAnimation, useInView } from "framer-motion"
 import { useRef } from "react"
 import RevealOnScroll from "../animations/RevealOnScroll"
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem, cardHover } from "../animations/animations"
+import chatImage from "../assets/projects/chat.png";
+import portImage from "../assets/projects/po.jpg"
+import deliImage from "../assets/projects/delicacy.png"
+
 
 const MyProject = () => {
     const [activeTab, setActiveTab] = useState('web')
@@ -34,30 +38,30 @@ const MyProject = () => {
         web: [
             {
                 id: 1,
-                title: "E-Commerce Platform",
-                description: "Platform thương mại điện tử đa vendor với hệ thống thanh toán, quản lý kho, và analytics",
-                technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redis"],
-                image: "/api/placeholder/400/250",
+                title: "CHAT-APP",
+                description: "A real-time chat application that allows users to send and receive messages and images instantly",
+                technologies: ["React", "Node.js", "MongoDB", "Zustand" , "Socket.io"],
+                image: chatImage,
                 demoLink: "#",
-                githubLink: "#",
+                githubLink: "https://github.com/lephu2k6/CHAT-APP/",
                 featured: true
             },
             {
                 id: 2,
-                title: "Social Media Dashboard",
-                description: "Dashboard quản lý mạng xã hội với scheduling, analytics và AI content suggestions",
-                technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js", "Firebase"],
-                image: "/api/placeholder/400/250",
+                title: "Portfolio",
+                description: "A personal portfolio website showcasing my projects, skills, and experience, built with React and Tailwind CSS.",
+                technologies: ["React" , "Tailwind CSS"],
+                image: portImage,
                 demoLink: "#",
                 githubLink: "#",
                 featured: false
             },
             {
                 id: 3,
-                title: "Project Management Tool",
-                description: "Ứng dụng quản lý dự án với real-time collaboration, Gantt chart và time tracking",
-                technologies: ["Vue.js", "Express", "PostgreSQL", "Socket.io", "D3.js"],
-                image: "/api/placeholder/400/250",
+                title: "Delicary Website ",
+                description: "Delicary Website is a responsive landing page designed for a modern food and restaurant brand",
+                technologies: ["HTML", "CSS", "JS"],
+                image: deliImage,
                 demoLink: "#",
                 githubLink: "#",
                 featured: true
@@ -83,7 +87,18 @@ const MyProject = () => {
                 demoLink: "#",
                 githubLink: "#",
                 featured: false
+            },
+            {
+                id: 3,
+                title: "Delicacy",
+                description: "A mobile application for discovering and sharing delicious food recipes from around the world.",
+                technologies: ["React Native", "Firebase", "Redux"],
+                image: deliImage,
+                demoLink: "#",
+                githubLink: "#",
+                featured: true
             }
+            
         ],
         ai: [
             {
@@ -135,7 +150,7 @@ const MyProject = () => {
                         My Projects
                     </h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Khám phá các dự án sáng tạo và giải pháp công nghệ mà tôi đã phát triển
+                        Explore the innovative projects and technology solutions I have developed
                     </p>
                 </motion.div>
                 
@@ -204,7 +219,6 @@ const MyProject = () => {
                                             alt={project.title}
                                             className="w-full h-full object-cover"
                                         />
-                                        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
                                     </div>
 
                                     {/* Project Content */}
